@@ -1,0 +1,598 @@
+/*
+Navigate :
+
+>>  General
+>>  Library : repeatable classes
+>>  Site Sections :
+    >
+    >
+    >
+    >
+
+*/
+
+
+/* ------    General    ------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+:root {
+    --main-clr1: #98ccd3;
+    --main-clr2: #ff5733;
+    --sec-clr1: ;
+    --sec-clr2: ;
+    --light-clr: rgb(230, 252, 255);
+    --dark-clr: #001b1f;
+    --btns-clr: #04626f;
+    --transparent-clr1: rgba(0, 0, 0, 0.5);
+    --transparent-clr2: rgba(0, 0, 0, 0.3);
+
+
+    --gap-narrow: 10px;
+    --gap-mid: 20px;
+    --gap-wide: 30px;
+
+    --padding-narrow: 30px;
+    --padding-mid: 60px;
+    --padding-wide: 100px;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+/* ------    Library    ------*/
+.cont {
+    padding-left: var(--padding-mid);
+    padding-right: var(--padding-mid);
+}
+
+.flx-bet {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flx-gap-s {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-narrow);
+}
+
+.flx-gap-m {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-mid);
+}
+
+.flx-gap-l {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-wide);
+}
+
+.has-children .dropdown {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 20px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 1s;
+    background-color: white;
+    color: #000;
+    border-radius: 5px;
+    margin-top: 27px;
+}
+
+.has-children:hover>.dropdown {
+    visibility: visible;
+    opacity: 1;
+}
+
+.dropdown li {
+    padding: 5px;
+    margin-bottom: 5px 10px;
+}
+.btn {
+    padding: 10px 30px;
+    margin: 10px;
+    width: fit-content;
+    cursor: pointer;
+    transition: all .5s;
+}
+.btn:hover {
+    opacity: .9;
+    scale: .95;
+}
+.btn.round {
+    border-radius: 10px;
+}
+.btn.light {
+    background-color: var(--btns-clr);
+    color: white;
+}
+.btn.dark {
+    background-color: var(--dark-clr);
+    color: white;
+}
+
+/* ------    S E C T I O N S    ------*/
+/*  >> Welcome :: Header  */
+.welcome {
+    background-image: url("../imgs/welcome_cover1.jpg");
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    color: white;
+}
+
+.welcome::before {
+    position: absolute;
+    z-index: 1;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--transparent-clr2);
+}
+
+header {
+    position: relative;
+    z-index: 2;
+}
+
+header .cont {}
+
+header .cont .up {
+    padding: 20px 0;
+}
+
+header .cont .up .social {}
+
+header .cont .up .social a {}
+
+header .cont .up .social a i {
+    transition: all .6s;
+    font-size: 20px;
+}
+
+header .cont .up .social a:hover i {
+    scale: 1.2;
+    color: var(--main-clr1);
+}
+
+header .cont .up .info {}
+
+header .cont .up .info div {
+    font-size: 20px;
+    transition: all .6s;
+}
+
+header .cont .up .info div i {}
+
+header .cont .up .info div p {}
+
+header .cont .up .info>div:hover {
+    scale: 1.2;
+    color: var(--main-clr1);
+}
+
+
+hr {
+    width: 100vw;
+    margin-left: -60px;
+}
+
+header .cont .dwn {
+    padding: 20px 0;
+}
+
+header .cont .dwn .logo {
+    font-size: 32px;
+}
+
+header .cont .dwn nav {}
+
+header .cont .dwn nav ul {}
+
+header .cont .dwn nav ul li {
+    padding: 6px;
+    font-size: 18px;
+    text-transform: capitalize;
+    transition: all .3s;
+}
+
+header .cont .dwn nav ul li:hover {
+    color: var(--main-clr1);
+}
+
+header .cont .dwn nav ul li a {}
+
+
+/*  >> Welcome :: Section  */
+.welcome section {
+    position: relative;
+    z-index: 1;
+}
+
+.welcome section .txt {
+    text-transform: capitalize;
+}
+
+.welcome .txt {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome .txt p {
+    font-size: 24px;
+}
+
+.welcome .txt h1.hero {
+    text-align: center;
+    font-size: 92px;
+}
+
+.welcome .sections-cards {}
+
+.welcome .sections-cards .card {
+    padding: 25px;
+    border-radius: 10px;
+    background-color: rgb(1 49 44 / 46%);
+    display: flex;
+    gap: 27px;
+}
+
+.welcome .card i {
+    font-size: 32px;
+}
+
+.welcome .card .card-txt {}
+
+.welcome .card .card-txt h4 {
+    margin-bottom: 11px;
+    color: var(--main-clr1);
+    text-transform: capitalize;
+}
+
+.welcome .card .card-txt p {}
+
+
+/*  Features  */
+section.features {
+    padding: 65px 0;
+    border-bottom: 1px solid grey;
+}
+
+section.features .cont {}
+
+section.features .cont .f-card {
+    display: flex;
+    gap: 25px;
+}
+
+.f-card .icon {
+    position: relative;
+}
+
+.f-card .icon::before {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--main-clr2);
+    top: -15%;
+}
+
+.f-card .icon i {
+    font-size: 40px;
+}
+
+.f-card .txt {}
+
+.f-card .txt h4 {
+    margin-bottom: 13px;
+    text-transform: capitalize;
+}
+
+.f-card .txt p {
+    color: grey;
+    line-height: 1.5;
+}
+
+
+
+/*  Why  */
+section.why {
+    padding: 50px 0;
+}
+
+section.why .cont {}
+
+section.why .cont .img {
+    width: 45vw;
+    position: relative;
+}
+
+section.why .cont .img img {
+    width: 80%;
+}
+
+section.why .cont .img::before {
+    position: absolute;
+    content: "";
+    width: 65%;
+    height: 90%;
+    border: 8px solid var(--main-clr1);
+    left: 41%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+section.why .cont .txt {
+    width: 45vw;
+}
+
+section.why .cont .txt h6 {
+    color: var(--main-clr2);
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+section.why .cont .txt h4 {
+    text-transform: capitalize;
+    font-size: 26px;
+    margin-left: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+section.why .questions {}
+
+section.why .questions .line {}
+
+section.why .questions .line .q {
+    text-transform: capitalize;
+    background-color: var(--main-clr1);
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    box-shadow: 0px 2px 4px -3px;
+    border-bottom: 3px solid white;
+}
+
+section.why .questions .line .a {
+    margin-left: 15px;
+    color: #aaa;
+    line-height: 1.6;
+    transition: all 5s;
+    display: none;
+}
+
+section.why .questions .line .a.active {
+    display: block;
+}
+
+
+
+/*  -- Testmonials | Start --  */
+.cont {}
+.cont .hdr {
+    width: 30vw;
+    margin: 5px auto;
+    text-transform: capitalize;
+    text-align: center;
+}
+.cont .hdr h6 {
+    color: var(--main-clr2);
+    font-size: 16px;
+}
+.cont .hdr h4 {
+    color: var(--main-clr1);
+    margin-top: 15px;
+    font-size: 32px;
+    letter-spacing: 2px;
+}
+.cont .swiper {
+    margin: 100px auto;
+    width: 80vw;
+}
+.cont .swiper .swiper-slide {}
+.cont .swiper .swiper-slide .test-card {}
+.cont .swiper .test-card .img {
+    padding-bottom: 20px;
+    border-bottom: 1px solid;
+    width: fit-content;
+    margin: 0 auto 25px auto;
+}
+.cont .swiper .test-card .img img {
+    width: 100px;
+    height: 100px;
+}
+.cont .swiper .test-card .name {
+    text-transform: capitalize;
+    color: var(--main-clr2);
+}
+.cont .swiper .test-card .title {
+    text-transform: capitalize;
+    color: var(--main-clr1);
+}
+.cont .swiper .test-card .test {
+    width: 50%;
+    margin: 20px auto;
+    font-size: 15px;
+    line-height: .9;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    scale: .6;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*  -- Testmonials | End --  */
+
+
+/*  -- Dessert | Start --  */
+section.dessert {
+    background-color: #eee;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+section.dessert .cont {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+}
+section.dessert .cont .big-img {
+    flex: 1;
+    height: 70vh;
+    position: relative;
+}
+section.dessert .cont .big-img .border {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    border: 5px solid var(--main-clr1);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+section.dessert .cont .big-img img {
+    height: 100%;
+    width: 100%;
+}
+section.dessert .cont .features {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    flex: 1;
+}
+section.dessert .cont .features .feat {
+    position: relative;
+    top: 0;
+    background-color: #fff;
+    width: 220px;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--main-clr1);
+    transition: all .5s;
+    box-shadow: 3px 4px 4px -3px #000;
+}
+.feat img {
+    width: 100px;
+}
+.feat h3 {
+    margin-top: 27px;
+    text-transform: capitalize;
+}
+section.dessert .cont .features .feat:hover {
+    top: -15px;
+}
+
+/*  -- Dessert | End --  */
+
+
+/*  -- Blog | Start --  */
+section.blog {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+section.blog h6 {
+    text-align: center;
+    color: var(--main-clr2);
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+}
+section.blog h4 {
+    text-align: center;
+    font-size: 40px;
+    text-transform: capitalize;
+}
+section.blog .cont {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 33px;
+}
+section.blog .cont .post {
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.post .photo {
+    width: 100%;
+    height: 400px;
+    margin-bottom: var(--gap-mid);
+    overflow: hidden;
+    position: relative;
+}
+.post .photo img {
+    width: 100%;
+    height: 100%;
+    transition: all .5s;
+}
+.post .photo:hover img {
+    scale: 1.1;
+}
+.post .date {
+    color: #aaa;
+}
+.post .title {}
+.blog .btn {
+    margin: 45px auto;
+    font-size: 19px;
+    text-transform: capitalize;
+}
+/*  -- Blog | End --  */
+
+
+/*  -- Footer | Start --  */
+footer {}
+footer .cont {}
+footer .cont > div {}
+footer .cont > div h2 {}
+footer .cont .nav {}
+footer .cont .recent-news {}
+footer .cont .double {}
+footer .cont .double .subscribe-form {}
+footer .cont .double .social {}
+/*  -- Footer | End --  */
+
